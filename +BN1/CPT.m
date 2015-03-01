@@ -1,4 +1,4 @@
-function [ cpt ] = BN1_CPT ( x , Pd )
+function [ cpt ] = CPT ( x , Pd )
 % CPT - construct CPT for a random variable in BN 1
 %   learn CPT parameters using Maximum Likelihood estimator
 %
