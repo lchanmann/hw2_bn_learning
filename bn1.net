@@ -1,0 +1,71 @@
+net
+{
+	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@1ea8a519";
+	jenginegenerator6060830225489488864L = "edu.ucla.belief.inference.JoinTreeSettings@4270ccfe";
+	recoveryenginegenerator6944530267470113528l = "edu.ucla.util.SettingsImpl@32b1576b";
+	node_size = (130 55);
+}
+
+node Xb
+{
+	states = ("H" "M" "L" );
+	position = (132 -304);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable1";
+	label = "Breathing rate";
+	excludepolicy = "include whole CPT";
+}
+node Xh
+{
+	states = ("H" "M" "L" );
+	position = (379 -304);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable2";
+	label = "Heart rate";
+	excludepolicy = "include whole CPT";
+}
+node Xt
+{
+	states = ("H" "M" "L" );
+	position = (623 -304);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable3";
+	label = "Skin temperature";
+	excludepolicy = "include whole CPT";
+}
+node Pd
+{
+	states = ("Yes" "No" );
+	position = (379 -57);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable0";
+	label = "Drink";
+	excludepolicy = "include whole CPT";
+}
+potential ( Xb | Pd )
+{
+	data = ((	0.0	0.882352941176471	0.117647058823529	)
+		(	0.16	0.693333333333333	0.146666666666667	));
+}
+potential ( Xh | Pd )
+{
+	data = ((	0.0588235294117647	0.823529411764706	0.117647058823529	)
+		(	0.106666666666667	0.893333333333333	0.0	));
+}
+potential ( Xt | Pd )
+{
+	data = ((	0.0	0.941176470588235	0.0588235294117647	)
+		(	0.16	0.746666666666667	0.0933333333333333	));
+}
+potential ( Pd | )
+{
+	data = (	0.184782608695652	0.815217391304348	);
+}

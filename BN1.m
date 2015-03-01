@@ -19,3 +19,5 @@ P_Xt_given_Pd = BN1.CPT(Xt, Pd);
 %
 model = BN1.model(P_Pd, P_Xb_given_Pd, P_Xh_given_Pd, P_Xt_given_Pd);
 model.predict(1, ['M' 'M' 'M'])
+model.predict(1, ['-' '-' '-'])
+model.predict(1, ['-' 'M' '-'])

@@ -14,9 +14,9 @@ classdef model
             P_Pd, P_Xb_given_Pd, P_Xh_given_Pd, P_Xt_given_Pd)
         
             obj.P_Pd = P_Pd;
-            obj.P_Xb_given_Pd = P_Xb_given_Pd;
-            obj.P_Xh_given_Pd = P_Xh_given_Pd;
-            obj.P_Xt_given_Pd = P_Xt_given_Pd;
+            obj.P_Xb_given_Pd = [P_Xb_given_Pd ones(2,1)];
+            obj.P_Xh_given_Pd = [P_Xh_given_Pd ones(2,1)];
+            obj.P_Xt_given_Pd = [P_Xt_given_Pd ones(2,1)];
         end
         
         function P = predict(obj, pd, e)
@@ -58,8 +58,8 @@ classdef model
         end
         
         function c = x_column(~, x)
-            xs = ['H' 'M' 'L'];
-            columns = [1 2 3];
+            xs = ['H' 'M' 'L' '-'];
+            columns = [1 2 3 4];
             
             c = columns(xs == x);
         end
