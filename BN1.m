@@ -1,5 +1,5 @@
 %
-% Get data
+% Get data and discretize
 %
 Pd = dataset1001(:, 5);
 Xb = discretize(dataset1001(:, 1));
@@ -13,3 +13,9 @@ P_Pd = [sum(Pd == 1)/length(Pd); sum(Pd == 0)/length(Pd)];
 P_Xb_given_Pd = BN1.CPT(Xb, Pd);
 P_Xh_given_Pd = BN1.CPT(Xh, Pd);
 P_Xt_given_Pd = BN1.CPT(Xt, Pd);
+
+%
+% Predict P(Pd|Xb, Xh, Xt)
+%
+model = BN1.model(P_Pd, P_Xb_given_Pd, P_Xh_given_Pd, P_Xt_given_Pd);
+model.predict(1, ['M' 'M' 'M'])
