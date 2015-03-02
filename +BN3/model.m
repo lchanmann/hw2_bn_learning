@@ -1,5 +1,5 @@
 classdef model
-    % MODEL - BN1 prediction
+    % MODEL - BN3 prediction
     %   Compute probability of 'Pd' given the evidences
     
     properties
@@ -50,11 +50,23 @@ classdef model
     %
     methods(Access = private)
         %
-        % Lookup P(x|pd) probability from CPT
+        % Compute P(x|pd) probability from 1-D Gaussian
         %
-        function P = p_x_given_pd(obj, x, pd, cpt)
-            P = cpt(obj.pd_row(pd), obj.x_column(x));
+        function P = p_x_given_pd(obj, x, pd, params)
+            param = params(obj.pd_row(pd),:);
+            if x ~= 0
+                m = param(1);
+                v = param(2);
+
+                P = (1/(sqrt(2*pi*v))) * exp(-(1/(2*v))*(x-m)^2); 
+            else
+                P = param(3);
+            end
         end
+        
+        %
+        % 
+        %
         
         %
         % Lookup P(pd) from CPT
@@ -71,16 +83,6 @@ classdef model
             rows = [1 2];
             
             r = rows(pds == pd);
-        end
-        
-        %
-        % Map the values {H, M, L , -} to column [1 2 3 4]
-        %
-        function c = x_column(~, x)
-            xs = ['H' 'M' 'L' '-'];
-            columns = [1 2 3 4];
-            
-            c = columns(xs == x);
         end
     end
 end
