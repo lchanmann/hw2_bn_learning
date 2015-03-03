@@ -24,3 +24,8 @@ model.predict(1, [9 0 0])
 
 % P(pd = 1|Xb = 9.3, Xh = 78.4, Xt = 36.3)
 model.predict(1, [9.3 78.4 36.3])
+
+%
+%
+%
+%
