@@ -1,10 +1,10 @@
 %
 % Get data and discretize
 %
-Pd = dataset1001(:, 5);
-Xb = dataset1001(:, 1);
-Xh = dataset1001(:, 2);
-Xt = dataset1001(:, 3);
+Pd = dataset(:, 5);
+Xb = dataset(:, 1);
+Xh = dataset(:, 2);
+Xt = dataset(:, 3);
 
 %
 % Maximum likelihood estimation
