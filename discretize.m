@@ -5,6 +5,9 @@ function [ x ] = discretize( x )
 %     - 'L' if less than one standard deviation about the mean
 %     - 'M' otherwise
 %
+    % empirical mean and standard deviation of x
+    %   mean = sum(x) / length(x);
+    %   std = sqrt( sum((x - mean) .^ 2) / length(x) )
     x_mean = mean(x);
     x_std = std(x, 1);
     
@@ -14,7 +17,5 @@ function [ x ] = discretize( x )
     x(H) = 'H'; 
     x(L) = 'L';
     x(~H & ~L) = 'M';
-    % convert integer codes into char array
-    % x = char(x);
 end
 
