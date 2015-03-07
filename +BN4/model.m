@@ -77,6 +77,8 @@ classdef model
 
                 P = (1/(sqrt(2*pi*v))) * exp(-(1/(2*v))*(x-m)^2); 
             else
+                % when x is not given (x == 0)
+                % the network imply P(x|pd) will sum up to 1
                 P = 1;
             end;
         end

@@ -17,10 +17,9 @@ classdef model
             P_Pd, P_Xb_given_Pd, P_Xh_given_Pd, P_Xt_given_Pd)
         
             obj.P_Pd = P_Pd;
-            % Add total of probability as the last column
-            obj.P_Xb_given_Pd = [P_Xb_given_Pd ones(2,1)];
-            obj.P_Xh_given_Pd = [P_Xh_given_Pd ones(2,1)];
-            obj.P_Xt_given_Pd = [P_Xt_given_Pd ones(2,1)];
+            obj.P_Xb_given_Pd = P_Xb_given_Pd;
+            obj.P_Xh_given_Pd = P_Xh_given_Pd;
+            obj.P_Xt_given_Pd = P_Xt_given_Pd;
         end
         
         %
@@ -60,7 +59,9 @@ classdef model
 
                 P = (1/(sqrt(2*pi*v))) * exp(-(1/(2*v))*(x-m)^2); 
             else
-                P = parameters(3);
+                % when x is not given (x == 0)
+                % the network imply P(x|pd) will sum up to 1
+                P = 1;
             end
         end
         
