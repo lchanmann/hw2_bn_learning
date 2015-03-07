@@ -36,3 +36,6 @@ BN2
 
 %% using BN#3...
 BN3
+
+%% using BN#4...
+BN4
