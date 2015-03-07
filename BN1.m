@@ -24,22 +24,6 @@ display(P_Xb_given_Pd);
 display(P_Xh_given_Pd);
 display(P_Xt_given_Pd);
 
-%% Predict P(Pd|Xb, Xh, Xt)
-model = BN1.model(P_Pd, P_Xb_given_Pd, P_Xh_given_Pd, P_Xt_given_Pd);
-
-display('--------------------- Prediction ---------------------');
-% P(pd = 1|Xb = M, Xh = M, Xt = M)
-display([ 'P(pd = 1|Xb = M, Xh = M, Xt = M) = ' ...
-    num2str(model.predict(1, ['M' 'M' 'M'])) ]);
-
-% P(pd = 1) without any evidences
-display([ 'P(pd = 1) without any evidences = ' ...
-    num2str(model.predict(1, ['-' '-' '-'])) ]);
-
-% P(pd = 1|Xh = M)
-display([ 'P(pd = 1|Xh = M) = ' ...
-    num2str(model.predict(1, ['-' 'M' '-'])) ]);
-
 %% Confusion matrix
 evidence = [Xb Xh Xt];
 data_size = size(evidence, 1);
