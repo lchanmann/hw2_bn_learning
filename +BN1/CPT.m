@@ -15,7 +15,7 @@ function [ cpt ] = CPT ( x , Pd )
 %         1 |   |   |   |
 %         0 |   |   |   |
 % Note:
-%   The elements/rows of e must correspond to x's
+%   The elements/rows of evidence must correspond to x's
 %
     domain = ['H', 'M', 'L'];
     cpt = zeros(2, length(domain));
@@ -23,9 +23,9 @@ function [ cpt ] = CPT ( x , Pd )
     Pd_is_1 = sum(Pd == 1);
     Pd_is_0 = sum(Pd == 0);
     
-    %                   count(x = {H, M, L} , pd = {1, 0})
-    % the likelihood = -----------------------------------
-    %                          count(pd = {1, 0})
+    %               count(x = {H, M, L} , pd = {1, 0})
+    % likelihood = -----------------------------------
+    %                      count(pd = {1, 0})
     for i = 1:length(domain)
         x_i = Pd(x == domain(i));
         cpt(1, i) = sum(x_i == 1) / Pd_is_1;

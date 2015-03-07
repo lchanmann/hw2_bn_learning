@@ -31,5 +31,8 @@ end
 %% using BN#1...
 BN1
 
+%% using BN#2
+BN2
+
 %% using BN#3...
 BN3
