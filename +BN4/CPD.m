@@ -1,9 +1,9 @@
 function [ cpd ] = CPD ( x , Pd, Xa )
-% BN4.CPT - construct CPT for a random variable in BN 4
-%   learn CPT parameters using Maximum Likelihood estimator
+% BN4.CPD - construct CPD for a random variable in BN 4
+%   learn CPD parameters using Maximum Likelihood estimator
 %
 % Input:
-%   x - discrete random variable. Domain = {H, M, L}
+%   x - random variable.
 %   Pd - evidence variable 'drink'. Domain = {1 0}
 %   Xa - evidence variable 'Ambulation status'. Domain = {1 2 3}
 %
