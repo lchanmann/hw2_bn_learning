@@ -52,15 +52,15 @@ classdef model
         %
         % Compute P(x|pd) probability from 1-D Gaussian
         %
-        function P = p_x_given_pd(obj, x, pd, params)
-            param = params(obj.pd_row(pd),:);
+        function P = p_x_given_pd(obj, x, pd, cpd)
+            parameters = cpd(obj.pd_row(pd),:);
             if x ~= 0
-                m = param(1);
-                v = param(2);
+                m = parameters(1);
+                v = parameters(2);
 
                 P = (1/(sqrt(2*pi*v))) * exp(-(1/(2*v))*(x-m)^2); 
             else
-                P = param(3);
+                P = parameters(3);
             end
         end
         
