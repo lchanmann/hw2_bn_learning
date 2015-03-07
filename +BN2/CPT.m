@@ -1,5 +1,5 @@
 function [ cpt ] = CPT ( x , Pd, Xa )
-% BN1.CPT - construct CPT for a random variable in BN 2
+% BN2.CPT - construct CPT for a random variable in BN 2
 %   learn CPT parameters using Maximum Likelihood estimator
 %
 % Input:

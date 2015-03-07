@@ -20,8 +20,11 @@ function [ params ] = mle( x, Pd )
     % empirical mean and variance of x
     %   mean = sum(x) / length(x);
     %   var = sum((x - mean) .^ 2) / length(x)
-    m = [mean(x_given_Pd_is_1) mean(x_given_Pd_is_0)]';
-    v = [var(x_given_Pd_is_1, 1) var(x_given_Pd_is_0, 1)]';
-    params = [m v];
+    params = [
+        mean(x_given_Pd_is_1) var(x_given_Pd_is_1, 1)
+        mean(x_given_Pd_is_0) var(x_given_Pd_is_0, 1)
+    ];
+    % normalize lack of data samples
+    params(isnan(params)) = 0;
 end
 
