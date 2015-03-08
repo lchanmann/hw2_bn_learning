@@ -17,10 +17,9 @@ classdef model
             P_Pd, P_Xb_given_Pd, P_Xh_given_Pd, P_Xt_given_Pd)
         
             obj.P_Pd = P_Pd;
-            % Add total of probability as the last column
-            obj.P_Xb_given_Pd = [P_Xb_given_Pd ones(2,1)];
-            obj.P_Xh_given_Pd = [P_Xh_given_Pd ones(2,1)];
-            obj.P_Xt_given_Pd = [P_Xt_given_Pd ones(2,1)];
+            obj.P_Xb_given_Pd = P_Xb_given_Pd;
+            obj.P_Xh_given_Pd = P_Xh_given_Pd;
+            obj.P_Xt_given_Pd = P_Xt_given_Pd;
         end
         
         %
@@ -52,15 +51,17 @@ classdef model
         %
         % Compute P(x|pd) probability from 1-D Gaussian
         %
-        function P = p_x_given_pd(obj, x, pd, params)
-            param = params(obj.pd_row(pd),:);
+        function P = p_x_given_pd(obj, x, pd, cpd)
+            parameters = cpd(obj.pd_row(pd),:);
             if x ~= 0
-                m = param(1);
-                v = param(2);
+                m = parameters(1);
+                v = parameters(2);
 
                 P = (1/(sqrt(2*pi*v))) * exp(-(1/(2*v))*(x-m)^2); 
             else
-                P = param(3);
+                % when x is not given (x == 0)
+                % the network imply P(x|pd) will sum up to 1
+                P = 1;
             end
         end
         

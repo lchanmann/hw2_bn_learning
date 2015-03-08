@@ -6,31 +6,36 @@
 % Fernando Torre ... CS
 %==========================================================================
 %%
-clc;clear;
-t=0;
-while (t ~= 1)
+clc; clear;
+datasets = ['1001testingdata.csv'; '1004testingdata.csv'];
+% loop: while (true)
+while 1
     clc;
     display('_______________________________________________________');
     display(' ');
-    display('             Choose Your Data set                      ');
+    display('             Choose Your Dataset                      ');
     display('_______________________________________________________');
-    display('             1: For Data set 1001                      ');
-    display('             2: For Data set 1004                      ');
+    display('             1: For Dataset 1001                      ');
+    display('             2: For Dataset 1004                      ');
     display('_______________________________________________________');
     display(' ');
-    x = input(' Select the Baysian Network that you want to implement : ');
-    if (x==1)||(x==2)
-        dataset1001 = load('1001testingdata.csv');
-        dataset1004 = load('1004testingdata.csv');
-        t=1;
+    d = input(' Select the Dataset that you want to use : ');
+    if (d == 1) || (d == 2)
+        dataset = load(datasets(d, :));
+        break;
     else    
-        msgbox('Invalid Data_set No...', 'Error','error');
+        msgbox('Invalid Dataset No...', 'Error','error');
         pause;
-        t=0;
     end
 end
 %% using BN#1...
 BN1
 
+%% using BN#2
+BN2
+
 %% using BN#3...
 BN3
+
+%% using BN#4...
+BN4
