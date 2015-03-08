@@ -4,7 +4,6 @@ clc;
 display('_______________________________________________________');
 display('                                                       ');
 display('                Programming Assignment #2              ');
-<<<<<<< HEAD
 fprintf('                  Data set No: %d\n', d);
 display('_______________________________________________________');
 display(' ');
@@ -13,15 +12,12 @@ display('                                                       ');
 display('               Bayesian Networks No.1                  ');
 display('_______________________________________________________');
 display(' ');
-=======
 fprintf('                      Dataset No: %d\n', d);
 display('_______________________________________________________');
 display('                                                       ');
 display('                 Bayesian Networks No.1                ');
 display('_______________________________________________________');
 display(' ');
-
->>>>>>> origin/master
 %% Load the data and discretize
 Pd = dataset(:, 5);
 Xb = discretize(dataset(:, 1));
@@ -34,16 +30,12 @@ P_Xb_given_Pd = BN1.CPT(Xb, Pd);
 P_Xh_given_Pd = BN1.CPT(Xh, Pd);
 P_Xt_given_Pd = BN1.CPT(Xt, Pd);
 
-<<<<<<< HEAD
-%<<<<<<< HEAD
 %% Predict P(Pd|Xb, Xh, Xt)...
-   model = BN1.model(P_Pd, P_Xb_given_Pd, P_Xh_given_Pd, P_Xt_given_Pd);
-=======
+model = BN1.model(P_Pd, P_Xb_given_Pd, P_Xh_given_Pd, P_Xt_given_Pd);
 display('--------------------- Parameters learned ---------------------');
 display(P_Xb_given_Pd);
 display(P_Xh_given_Pd);
 display(P_Xt_given_Pd);
->>>>>>> origin/master
 
 %% Confusion matrix
 evidence = [Xb Xh Xt];
@@ -59,8 +51,6 @@ end
 %   otherwise, the person doesn't drink (Pd = 0)
 predicted_Pd = prediction > 0.5;
 C = confusion(Pd, predicted_Pd);
-
-<<<<<<< HEAD
 %% P(pd = 1|Xh = M)
   display('Compute the P(pd = 1|Xh = M) : ');
   model.predict(1, ['-' 'M' '-'])
@@ -91,11 +81,10 @@ display(' ');
 %
 display('--------------------- Confusion matrix ---------------------');
 display(C);
-pause;
-=======
 display(' ');
-display('--------------------- Confusion matrix ---------------------');
-display(C);
+display('------------------- Compute the Accuracy -------------------');
+display(' ');
+sum=C(1,1)+C(1,2)+C(2,1)+C(2,2);
+acc=((C(1,1)+C(2,2))/sum)*100
 display('Press Enter to continue ... ');
 pause;
->>>>>>> origin/master
