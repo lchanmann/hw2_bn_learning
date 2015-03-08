@@ -3,6 +3,12 @@
 clc;
 display('_______________________________________________________');
 display('                                                       ');
+display('                Programming Assignment #2              ');
+fprintf('                  Dataset No: %d\n', d);
+display('_______________________________________________________');
+display(' ');
+display('_______________________________________________________');
+display('                                                       ');
 display('             Programming Assignment #2                 ');
 display('               Bayesian Networks No.1                  ');
 display('_______________________________________________________');
@@ -43,4 +49,5 @@ C = confusion(Pd, predicted_Pd);
 display(' ');
 display('--------------------- Confusion matrix ---------------------');
 display(C);
+display('Press Enter to continue ... ');
 pause;

@@ -26,8 +26,7 @@ P_Xa = [sum(Xa == 1)/length(Xa); sum(Xa == 2)/length(Xa); sum(Xa == 3)/length(Xa
 P_Xb_given_Pd_and_Xa = BN2.CPT(Xb, Pd, Xa);
 P_Xh_given_Pd_and_Xa = BN2.CPT(Xh, Pd, Xa);
 P_Xt_given_Pd_and_Xa = BN2.CPT(Xt, Pd, Xa);
-%% __________________________ Parameters learned __________________________
-%
+
 display('--------------------- Parameters learned ---------------------');
 display(P_Xb_given_Pd_and_Xa);
 display(P_Xh_given_Pd_and_Xa);
@@ -47,11 +46,9 @@ end
 %   otherwise, the person doesn't drink (Pd = 0)
 predicted_Pd = prediction > 0.5;
 C = confusion(Pd, predicted_Pd);
-%% __________________________ Confusion matrix  ___________________________
-%
+
 display(' ');
 display('--------------------- Confusion matrix ---------------------');
 display(C);
-display(' ');
 display('Press Enter to continue ... ');
 pause;
