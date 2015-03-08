@@ -9,8 +9,7 @@
 clc; clear;
 datasets = ['1001testingdata.csv'; '1004testingdata.csv'];
 % loop: while (true)
-t=0;t1=0;
-while (t ~= 1)
+while t1~=0
     while 1
         clc;
         display('_______________________________________________________');
@@ -41,21 +40,15 @@ while (t ~= 1)
     %% using BN#4...
     BN4
   clc;
-      while (t1 ~= 1)
+      while (t ~= 1)
           clc;
-             display('_______________________________________________________');
-             display('                                                       ');
-             display('                Programming Assignment #2              ');
-             display('_______________________________________________________');
-             display(' ');
-             I= input(' Do you want to use another Dataset [Y/N] : ','s');
+          I= input(' Select the Dataset that you want to use : [Y/N] ');
              if  strcmp(I,'Y') || strcmp(I,'y')
-                 t=0;t1=1;
+                 t2=0;t1=0;
              elseif  strcmp(I,'N') || strcmp(I,'n')    
-                 t=1;t1=1;
-             else
-                 msgbox('Invalid Dataset No...', 'Error','error');
-                 t=0;t1=0;
+                 t1=1;
+            else
+              msgbox('Invalid Dataset No...', 'Error','error');  
              end
       end
 end
