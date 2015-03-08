@@ -3,7 +3,7 @@ function [ C ] = confusion( Pd, predicted )
 %   Obtain the confusion vector by calculating the dot product between 
 %       unit vector u = [1 2] and [Pd predicted]' 
 %   
-%   Then the confusion vector contains:
+%   Then reconstruct the confusion matrix from the vector:
 %      True  positive = [1 2] * [1 1]' = 3
 %      False positive = [1 2] * [0 1]' = 2
 %      False negative = [1 2] * [1 0]' = 1
@@ -17,7 +17,7 @@ function [ C ] = confusion( Pd, predicted )
     true_negative = sum(v == 0);
     
     C = [ 
-        true_positive  false_positive ;
+        true_positive  false_positive
         false_negative true_negative
     ];
 end
