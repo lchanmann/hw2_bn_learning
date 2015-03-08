@@ -33,6 +33,7 @@ evidence = [Xb Xh Xt];
 data_size = size(evidence, 1);
 prediction = zeros(data_size, 1);
 
+% prediction
 model = BN1.model(P_Pd, P_Xb_given_Pd, P_Xh_given_Pd, P_Xt_given_Pd);
 for i = 1:data_size
     prediction(i, 1) = model.predict(1, evidence(i, :));
