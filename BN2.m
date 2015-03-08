@@ -7,7 +7,7 @@ display('                Programming Assignment #2              ');
 fprintf('                      Dataset No: %d\n', d);
 display('_______________________________________________________');
 display('                                                       ');
-display('                 Bayesian Networks No.2               ');
+display('                 Bayesian Networks No.2                ');
 display('_______________________________________________________');
 display(' ');
 
