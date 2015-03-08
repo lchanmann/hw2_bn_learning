@@ -4,12 +4,10 @@ clc;
 display('_______________________________________________________');
 display('                                                       ');
 display('                Programming Assignment #2              ');
-fprintf('                  Data set No: %d\n', d);
-display('_______________________________________________________');
-display(' ');
+fprintf('                      Dataset No: %d\n', d);
 display('_______________________________________________________');
 display('                                                       ');
-display('               Bayesian Networks No.4                  ');
+display('                 Bayesian Networks No.4                ');
 display('_______________________________________________________');
 display(' ');
 
