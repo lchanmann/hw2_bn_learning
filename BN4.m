@@ -45,15 +45,12 @@ end
 %   otherwise, the person doesn't drink (Pd = 0)
 predicted_Pd = prediction > 0.5;
 C = confusion(Pd, predicted_Pd);
-%% __________________________ Confusion matrix  ___________________________
-%
+% accuracy rate = sum of diagonal / sum of all
+accuracy = sum(diag(C)) / sum(sum(C));
+
 display(' ');
 display('--------------------- Confusion matrix ---------------------');
 display(C);
-display(' ');
-display('------------------- Compute the Accuracy -------------------');
-display(' ');
-sum=C(1,1)+C(1,2)+C(2,1)+C(2,2);
-acc=((C(1,1)+C(2,2))/sum)*100
+display(accuracy);
 display('Press Enter to continue ... ');
 pause;
