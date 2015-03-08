@@ -4,7 +4,7 @@ clc;
 display('_______________________________________________________');
 display('                                                       ');
 display('                Programming Assignment #2              ');
-fprintf('                      Dataset No: %d\n', d);
+fprintf('                     Data set No: %d\n', d);
 display('_______________________________________________________');
 display('                                                       ');
 display('                 Bayesian Networks No.1                ');

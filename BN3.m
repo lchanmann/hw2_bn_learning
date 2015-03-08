@@ -1,4 +1,4 @@
-% Bayesian Networks No.3...
+% Bayesian Networks No.3
 %%
 clc;
 display('_______________________________________________________');

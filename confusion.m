@@ -9,7 +9,6 @@ function [ C ] = confusion( Pd, predicted )
 %      False negative = [1 2] * [1 0]' = 1
 %      True  negative = [1 2] * [0 0]' = 0
 %
-
     v = [1 2] * [Pd predicted]';
     
     true_positive = sum(v == 3);
