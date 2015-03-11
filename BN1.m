@@ -24,6 +24,7 @@ P_Xh_given_Pd = BN1.CPT(Xh, Pd);
 P_Xt_given_Pd = BN1.CPT(Xt, Pd);
 
 display('--------------------- Parameters learned ---------------------');
+display(P_Pd);
 display(P_Xb_given_Pd);
 display(P_Xh_given_Pd);
 display(P_Xt_given_Pd);

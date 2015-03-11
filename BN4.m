@@ -26,6 +26,8 @@ P_Xh_given_Pd_and_Xa = BN4.CPD(Xh, Pd, Xa);
 P_Xt_given_Pd_and_Xa = BN4.CPD(Xt, Pd, Xa);
 %
 display('--------------------- Parameters learned ---------------------');
+display(P_Pd);
+display(P_Xa);
 display(P_Xb_given_Pd_and_Xa);
 display(P_Xh_given_Pd_and_Xa);
 display(P_Xt_given_Pd_and_Xa);
